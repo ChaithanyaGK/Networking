@@ -1,7 +1,7 @@
 # Networking concepts
 
-1. [IP Addresses, Subnet Masks, and Default Gateways](#IP-Addresses-Subnet-Masks,-and-Default-Gateways)
-2. Network Adress Translator (NAT) and Routing
+- [IP Addresses, Subnet Masks, and Default Gateways](#ip-addresses-subnet-masks-and-default-gateways)
+- Network Adress Translator (NAT) and Routing
 
 ## IP Addresses, Subnet Masks, and Default Gateways
 (http://www.networkcomputing.com/network-security/ip-addresses-subnet-masks-and-default-gateways/1835691346)
