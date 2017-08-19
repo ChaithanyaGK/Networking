@@ -1,7 +1,7 @@
 # Networking concepts
 
 - [IP Addresses, Subnet Masks, and Default Gateways](#ip-addresses-subnet-masks-and-default-gateways)
-- Network Adress Translator (NAT) and Routing
+- Network Address Translation (NAT) and Routing
 
 ## IP Addresses, Subnet Masks, and Default Gateways
 (http://www.networkcomputing.com/network-security/ip-addresses-subnet-masks-and-default-gateways/1835691346)
@@ -50,3 +50,18 @@ The default gateway is used as the destination of all traffic that is not on the
 
 The default gateway always resides in the same subnet as the end device IP. The gateway can really be any unique address within the subnet itself, but most network administrators designate the first number of the subnet as the gateway. Therefore, 192.168.99.1 would be the default gateway of our source device given the fact that we have a 255.255.255.0 subnet mask
 
+## Network Address Translation (NAT) and Routing
+
+**NAT is to translate private IP into public IP or Vice Versa.**
+
+**Example:**
+
+x.x.x.x=Public IP which NAT's to 192.168.1.10
+
+Let's say you have a website www.example.com whose public DNS points to x.x.x.x, and you have an IIS website hosted on 192.168.1.10 on your internal network.  Someone on the internet would open a browser type in www.example.com, which would look up the IP x.x.x.x.  It would request the webpage and hit your firewall where it would NAT to the internal IP 192.168.1.10, and return the webpage.
+
+**Routing is the process of moving a packet of data from source to destination.**
+
+**Example:**
+
+Let's say you have two sites connected by a router with Site1 on the subnet 192.168.1.x and Site2 on the subnet 192.168.2.x.  On Site1, the default route tells it to go to the internet.  However, let's say you want to connect from Site1 to a Server on Site2; In that case, you need a route on Site1's router that says anything on the subnet 192.168.2.x should be sent to the router at Site2.  Without that route, the traffic would take the default route and try to go over the internet
