@@ -2,6 +2,7 @@
 
 - [IP Addresses, Subnet Masks, and Default Gateways](#ip-addresses-subnet-masks-and-default-gateways)
 - [Network Address Translation (NAT) and Routing](#network-address-translation-nat-and-routing)
+- [Router vs Gateway](#router-vs-gateway)
 
 ## IP Addresses, Subnet Masks, and Default Gateways
 (http://www.networkcomputing.com/network-security/ip-addresses-subnet-masks-and-default-gateways/1835691346)
@@ -62,3 +63,29 @@ Let's say you have a website www.example.com whose public DNS points to x.x.x.x,
 
 **Example:**  
 Let's say you have two sites connected by a router with Site1 on the subnet 192.168.1.x and Site2 on the subnet 192.168.2.x.  On Site1, the default route tells it to go to the internet.  However, let's say you want to connect from Site1 to a Server on Site2; In that case, you need a route on Site1's router that says anything on the subnet 192.168.2.x should be sent to the router at Site2.  Without that route, the traffic would take the default route and try to go over the internet
+
+## Router vs Gateway
+
+A **Router** is a Network device that forwards packets from one network to another when a packet comes in through one port, the router reads the address information on the packet and determines the right destination, then uses routing table or routing policy to direct the packet to the next network or next hop. A router is a device that is capable of sending and receiving data packets between computer networks, also creating an overlay network.
+
+A **Gateway**, on the other hand, joins dissimilar systems. Gateway it is defined as a network entity that allows a network to interface with another network with different protocols. Gateways acts as a network point that acts as an entrance to another network. The gateway can also allow the network to connect the computer to the internet.
+
+**Example:**  
+Suppose you have a Windows 2000 network that’s using TCP/IP as its primary protocol. Because TCP/IP is also the primary protocol of the Internet, you could use a router to connect your network to the Internet. The router would ensure that:  
+- Traffic intended for the local network doesn’t bleed onto the Internet.
+- Traffic residing on the Internet that’s not specifically intended for your network stays on the Internet.
+
+A gateway, on the other hand, joins dissimilar systems. The best example of a gateway would be a device that joins a PC network with a 3270 mainframe environment or a device that allows a Windows NT network to communicate with a NetWare network. Although a gateway can be used to reduce network traffic, it’s more often used to make communication possible in dissimilar environments.
+
+Below table will help clearly differentiate between both  Router and Gateway:
+
+| PARAMETER | ROUTER  | GATEWAY |
+| --- | --- | --- |
+| Terminology	| Network device that forwards packets from one network to another.Based on internal routing tables, routers read each incoming packet and decide how to forward it. Routers work at the network layer (layer 3) of the protocol	Device that converts one protocol or format to another. | A network gateway converts packets from one protocol to another. The gateway functions as an entry/exit point to the network. |
+| Primary Goal	| Route traffic from one network to other.	| Translate from one protocol to other |
+| Feature support	| Routers provide additional features like DHCP server, NAT, Static Routing, and Wireless Networking/IPv6 address , Mac address	| Protocol conversion like VoIP to PSTN or Network Access Control etc. |
+| Dynamic Routing	 | Supported	| Not supported |
+| Hosted on	| Dedicated Appliance (Router hardware)	| Dedicated/Virtual Appliance or physical Server |
+| Related terms	| Internet Router, Wireless Router	| Proxy server, Gateway Router, Voice Gateway |
+| OSI layer	| Works on Layer 3 and 4	| Works upto Layer 5 |
+| Working principle	| Works by installing routing information for various networks and routes traffic based on destination address	| Works by differentiating what is inside network and what is outside network |
